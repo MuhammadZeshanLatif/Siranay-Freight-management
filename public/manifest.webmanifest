@@ -1,0 +1,9 @@
+{
+  "name": "Siranay Freight Management LLC",
+  "short_name": "Siranay Freight",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#061f3b",
+  "icons": []
+}

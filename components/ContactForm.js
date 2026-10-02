@@ -1,0 +1,4 @@
+'use client';
+import { useState } from 'react';
+import { openInquiryEmail } from '@/lib/inquiry-email';
+export default function ContactForm(){const [ok,setOk]=useState(false);return <form className="contact-form" onSubmit={(e)=>{e.preventDefault();openInquiryEmail(e.currentTarget,"Contact — Siranay Freight Management");setOk(true)}}><div className="form-grid two"><label>Name *<input required name="Name"/></label><label>Email *<input required type="email" name="Email"/></label></div><label>Phone<input type="tel" name="Phone"/></label><label>Subject *<input required name="Subject"/></label><label>Message *<textarea name="Message" required rows="7"/></label><button className="btn btn-gold" type="submit">Send Message →</button><p className="form-note">Opens your email app. Your message is sent when you choose Send there.</p>{ok&&<p className="success-message" role="status">Your email draft is ready. Send it in your email app to deliver your message.</p>}</form>}

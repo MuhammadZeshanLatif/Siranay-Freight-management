@@ -14,7 +14,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" className="brand" aria-label="Siranay Freight Management home">
-          <Image src="/images/logo.webp" alt="Siranay Freight Management" width={230} height={56} priority />
+          <Image src="/images/logo-header.webp" alt="Siranay Freight Management" width={2048} height={690} priority className="header-logo" />
         </Link>
         <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open} aria-controls="main-navigation">
           <Icon name={open ? 'close' : 'menu'} size={28} />

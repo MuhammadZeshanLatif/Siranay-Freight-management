@@ -1,27 +1,22 @@
+import Image from 'next/image';
 import Icon from '@/components/Icon';
-import Hero from '@/components/Hero';
-import FeatureStrip from '@/components/FeatureStrip';
-import SectionTitle from '@/components/SectionTitle';
-import { CoreServiceCards, DetailedServiceCards } from '@/components/ServiceGrid';
-import ProcessSteps from '@/components/ProcessSteps';
-import AudienceGrid from '@/components/AudienceGrid';
-import StatsBand from '@/components/StatsBand';
-import FAQ from '@/components/FAQ';
+import '../home-reference.css';
+import './services-reference.css';
 
-export const metadata = {
-  title: 'Services',
-  description: 'Dispatch, carrier setup, broker communication, cross-border support, route coordination, billing and ongoing carrier support.',
-  alternates: { canonical: '/services' }
-};
+export const metadata = { title: 'Services', description: 'Load sourcing, broker communication, dispatch coordination, documentation, and domestic and bilingual U.S.–Canada carrier support.', alternates: { canonical: '/services' } };
 
-export default function ServicesPage(){return <>
-  <Hero compact className="hero-services" eyebrow="OUR SERVICES" title="Dispatch and Carrier Support Designed for {accent}" accent="Your Success." text="We handle the communication, coordination, and logistics so you can focus on driving. From load sourcing to broker communication, route planning, and bilingual English/French support, Siranay provides reliable dispatch services for U.S.–Canada cross-border operations." image="/images/hero-services-truck.webp" primary="Request Services" primaryHref="/carrier-inquiry" secondary="Carrier Inquiry" secondaryHref="/carrier-inquiry" />
-  <FeatureStrip />
-  <section className="section"><div className="container"><SectionTitle eyebrow="OUR CORE SERVICES" title="What We {accent}" accent="Do" text="Complete dispatch and carrier support, tailored to your needs."/><CoreServiceCards/></div></section>
-  <section className="section section-muted"><div className="container"><SectionTitle eyebrow="OUR DETAILED SERVICES" title="Dispatch Solutions Built Around {accent}" accent="Your Operation" text="More than just load booking — we provide complete support to help you run a more profitable, efficient and stress-free business."/><DetailedServiceCards/></div></section>
-  <section className="section"><div className="container"><SectionTitle eyebrow="OUR PROCESS" title="How We Work {accent}" accent="With Drivers" text="A simple, streamlined process to get you loaded and keep you moving."/><ProcessSteps variant="services"/></div></section>
-  <section className="section section-muted"><div className="container"><SectionTitle eyebrow="WHY CHOOSE US" title="Why Carriers Choose {accent}" accent="Siranay" text="We're more than a dispatch service — we're a partner in your success."/><div className="value-grid six">{[['users','Personalized Support','Real people who care about your business and success.'],['truck','Small Fleet Friendly','We proudly support owner-operators and small fleets.'],['chat','Responsive Communication','Quick responses and consistent updates whenever you need us.'],['globe','Bilingual English/French Support','Clear communication for U.S.–Canada operations.'],['shield','Honest, Transparent Dispatch','No hidden fees, no false promises, just honest work.'],['chart','Focus on Long-Term Success','We build lasting relationships and help your business grow.']].map(([i,t,d])=><div className="value-card" key={t}><span className="emoji-icon"><Icon name={i} size={39}/></span><h3>{t}</h3><p>{d}</p></div>)}</div></div></section>
-  <section className="section"><div className="container"><SectionTitle eyebrow="WHO WE SERVE" title="Who We Support" text="We work with a wide range of carriers, from independent drivers to growing fleets."/><AudienceGrid/></div></section>
-  <StatsBand title="Trusted Support. Real Results."/>
-  <section className="section"><div className="container faq-split reverse"><div className="faq-visual"><img src="/images/dispatch-detail.webp" alt="Dispatch truck"/></div><div><span className="eyebrow">FAQ</span><h2>Frequently Asked <span>Questions</span></h2><FAQ/></div></div></section>
-</>}
+function Flags() { return <span className="services-flags" aria-label="United States and Canada flags"><svg viewBox="0 0 32 22" aria-hidden="true"><path fill="#fff" d="M0 0h32v22H0z"/>{[0,3.38,6.76,10.14,13.52,16.9,20.28].map(y=><path key={y} fill="#c82032" d={`M0 ${y}h32v1.7H0z`}/>)}<path fill="#173b7a" d="M0 0h13v11.85H0z"/>{[2.2,5.2,8.2].map(y=>[2,5,8,11].map(x=><circle key={`${x}-${y}`} cx={x} cy={y} r=".55" fill="#fff"/>))}</svg><svg viewBox="0 0 32 22" aria-hidden="true"><path fill="#fff" d="M0 0h32v22H0z"/><path fill="#e21b2d" d="M0 0h7v22H0zM25 0h7v22h-7zM16 3l1.4 3.1 2.2-1.2-.3 2.3 2.4.6-1.8 1.7 1.2 2.2-3.3-.3L16 17l-1.8-5.6-3.3.3 1.2-2.2-1.8-1.7 2.4-.6-.3-2.3 2.2 1.2z"/></svg></span>; }
+function USMap({solid=false}) { return <svg className={`services-map ${solid?'solid':''}`} viewBox="0 0 64 44" aria-hidden="true"><path d="m3 9 7-2 2 2 7-1 7 3 8-1 4 3 8-1 4 4 7-2-2 7 4 4-5 2-1 7-5-2-4 5-5-2-4 4-5-4-4 1-3-5-6-1-2-5-6-1 1-6-3-4z"/></svg>; }
+const services = [
+  ['search','Load Sourcing & Planning','We identify load opportunities that fit your equipment, preferred lanes, schedule, and operating goals.'],
+  ['chat','Broker Communication & Rate Negotiation','We communicate with brokers on your behalf, review load details, and negotiate rates and terms before you make the final decision.'],
+  ['truck','Dispatch Coordination','We help coordinate pickup and delivery information, appointments, load details, and communication throughout the trip.'],
+  ['document','Rate Confirmations & Routine Documentation','We coordinate rate confirmations and routine dispatch paperwork to help keep each load organized from booking through delivery.'],
+  ['pin','U.S. Domestic Carrier Support','Dispatch support for owner-operators and small fleets running lanes throughout the United States.'],
+  ['flags','U.S.–Canada Cross-Border Support','Specialized coordination for carriers operating between the United States and Canada, with bilingual English/French communication available for carriers and drivers.']
+];
+export default function ServicesPage() { return <div className="home-reference services-reference">
+  <section className="services-hero"><div className="services-hero-inner"><span className="services-eyebrow">OUR SERVICES</span><h1>Keep Moving.<br/><em>Wherever Your<br/>Business Takes You.</em></h1><p>Professional dispatch and carrier support for owner-operators and small fleets operating throughout the United States, with specialized bilingual English/French support for carriers running U.S.–Canada cross-border lanes.</p><div className="services-hero-features"><div><USMap/><strong>U.S. Domestic<br/>Dispatch</strong></div><div><Icon name="truck" size={46}/><strong>U.S.–Canada<br/>Cross-Border Support</strong></div><div><Icon name="chat" size={38}/><strong>English &amp; French<br/>Communication</strong></div></div></div></section>
+  <section className="services-support"><div className="home-wide"><div className="home-section-heading"><span>OUR DISPATCH &amp; CARRIER SUPPORT SERVICES</span><h2>Focused Support <em>for Your Success.</em></h2><p>We handle the communication, coordination, and logistics so you can focus on the road ahead.</p></div><div className="services-support-grid">{services.map(([icon,title,text])=><article className="services-support-card" key={title}><span className="services-card-icon">{icon==='flags'?<Flags/>:icon==='search'?<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 7 7"/></svg>:<Icon name={icon} size={38}/>}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
+  <section className="services-domestic"><div className="services-domestic-photo"><Image src="/images/services-domestic-road.webp" alt="Siranay truck on a mountain highway at sunset" fill sizes="(max-width:700px) 100vw, 47vw"/></div><div className="services-domestic-copy"><span className="home-small-heading">DOMESTIC OR CROSS-BORDER</span><h2>Siranay Keeps <em>You Moving.</em></h2><div className="services-lane"><span><USMap solid/></span><div><h3>Running only in the U.S.?</h3><p>You’re welcome at Siranay.</p></div></div><div className="services-lane"><span><Flags/></span><div><h3>Running between the U.S. and Canada?</h3><p>We’ve built specialized bilingual support for you, too.</p></div></div></div></section>
+</div>; }

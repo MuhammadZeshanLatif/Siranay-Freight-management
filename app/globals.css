@@ -109,3 +109,5 @@ body{line-height:1.35}h2{font-size:clamp(28px,3.15vw,40px)}h3{line-height:1.12}p
 @media(min-width:901px){.hero-about,.hero-carrier-inquiry{background-color:#001c32;background-size:100% 100%,auto 135%;background-position:center,right center;background-repeat:no-repeat;background-image:linear-gradient(90deg,#001c32 0%,#001c32d9 28%,transparent 57%),var(--hero-image)}}
 
 .site-header .brand img.header-logo{height:auto;object-fit:contain;clip-path:none;mix-blend-mode:normal}
+
+.home-footer-brand img.footer-logo,.footer-brand img.footer-logo{height:auto;object-fit:contain;clip-path:none;filter:brightness(0) invert(1);mix-blend-mode:normal}

@@ -10,6 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname().replace(/\/$/, '') || '/';
   const isHome = pathname === '/' || pathname === '/services';
+  if (pathname.startsWith('/admin')) return null;
   return (
     <header className="site-header">
       <div className="container header-inner">

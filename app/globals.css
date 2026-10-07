@@ -111,3 +111,9 @@ body{line-height:1.35}h2{font-size:clamp(28px,3.15vw,40px)}h3{line-height:1.12}p
 .site-header .brand img.header-logo{height:auto;object-fit:contain;clip-path:none;mix-blend-mode:normal}
 
 .home-footer-brand img.footer-logo,.footer-brand img.footer-logo{height:auto;object-fit:contain;clip-path:none;filter:brightness(0) invert(1);mix-blend-mode:normal}
+
+@media(max-width:900px){.site-header .brand{flex:0 1 auto;min-width:0;max-width:calc(100% - 60px)}.site-header .brand img.header-logo{width:min(210px,100%);height:auto;max-height:none;object-fit:contain;transform:none!important}.site-header .header-inner{gap:16px;min-height:76px;height:auto;padding:8px 0}.site-header .menu-button{flex:none}}
+@media(max-width:450px){body .site-header .brand img.header-logo{width:min(190px,100%);max-height:none;transform:none!important}}
+
+@media(max-width:900px){body:has(main) .site-header .brand img.header-logo{width:min(210px,100%);height:auto;max-height:none;transform:none!important}body:has(main) .site-header .header-inner{min-height:76px;height:auto;padding:8px 0}}
+@media(max-width:450px){body:has(main) .site-header .brand img.header-logo{width:min(190px,100%)}}

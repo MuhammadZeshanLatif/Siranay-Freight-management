@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { nav } from '@/lib/site';
 import Icon from './Icon';
+import './shared-header.css';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname().replace(/\/$/, '') || '/';
-  const isHome = pathname === '/' || pathname === '/services';
   if (pathname.startsWith('/admin')) return null;
   return (
-    <header className="site-header">
+    <header id="siranay-header" className="site-header">
       <div className="container header-inner">
         <Link href="/" className="brand" aria-label="Siranay Freight Management home">
           <Image src="/images/logo-header.webp" alt="Siranay Freight Management" width={2048} height={690} priority className="header-logo" />
@@ -26,7 +26,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/carrier-inquiry" className="btn btn-gold nav-cta" onClick={() => setOpen(false)}>{!isHome && <Icon name="mail" size={17}/>} Get in Touch {isHome && '→'}</Link>
+          <Link href="/carrier-inquiry" className="btn btn-gold nav-cta" onClick={() => setOpen(false)}>Get in Touch →</Link>
         </nav>
       </div>
     </header>

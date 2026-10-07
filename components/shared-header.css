@@ -1,0 +1,12 @@
+#siranay-header{background:#fff;color:#061738;position:relative;box-shadow:none;font-family:Arial,Helvetica,sans-serif}
+#siranay-header .header-inner{width:min(1600px,84%);height:auto;min-height:clamp(78px,6.3vw,120px);padding:10px 0;gap:36px;display:flex;align-items:center;justify-content:space-between}
+#siranay-header .brand{flex:none;max-width:35%}
+#siranay-header .brand img.header-logo{width:clamp(210px,17vw,320px);height:auto;max-height:none;object-fit:contain;filter:none;mix-blend-mode:normal;clip-path:none;transform:none!important;position:static}
+#siranay-header .main-nav{display:flex;align-items:center;gap:clamp(24px,3vw,58px);font-size:clamp(13px,1.1vw,20px);font-weight:700;color:#061738;background:#fff;width:auto;position:static;padding:0;flex-direction:row}
+#siranay-header .main-nav>a:not(.btn){color:#061738;padding:20px 0}
+#siranay-header .main-nav>a.active:not(.btn):after{bottom:10px;background:#f6aa18;height:2px}
+#siranay-header .main-nav .nav-cta{display:inline-flex;color:#061738;background:linear-gradient(#ffc84f,#f0a60a);height:auto;padding:17px 30px;margin:0;font-size:clamp(12px,1vw,18px);box-shadow:none}
+#siranay-header .menu-button{display:none;color:#061738;flex:none}
+@media(max-width:1100px){#siranay-header .header-inner{width:92%;gap:22px}#siranay-header .main-nav{gap:22px}#siranay-header .main-nav .nav-cta{padding:13px 20px}}
+@media(max-width:900px){#siranay-header .header-inner{width:92%;min-height:82px;padding:10px 0}#siranay-header .brand{max-width:calc(100% - 50px)}#siranay-header .brand img.header-logo{width:210px;max-width:100%;height:auto}#siranay-header .menu-button{display:block}#siranay-header .main-nav{display:none}#siranay-header .main-nav.open{display:flex;position:absolute;top:100%;left:0;right:0;width:100%;padding:18px;flex-direction:column;gap:4px;background:#fff;box-shadow:0 10px 20px #00172b14}#siranay-header .main-nav.open>a:not(.btn){padding:12px}#siranay-header .main-nav .nav-cta{margin:8px 0}#siranay-header .main-nav>a.active:not(.btn):after{bottom:4px}}
+@media(max-width:450px){#siranay-header .brand img.header-logo{width:190px}}

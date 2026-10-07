@@ -14,9 +14,9 @@ const steps = [
 ];
 
 const audiences = [
-  ['Owner-Operators', 'Dedicated dispatch and support so you can stay loaded, maximize miles, and grow your income.', '/images/owner-operator.webp'],
-  ['Small Fleets', 'Scalable support for growing fleets and multiple trucks, with consistent communication and coordination.', '/images/small-fleet.webp'],
-  ['New Carriers', 'Guidance and support to help new carriers get started with confidence.', '/images/new-carrier.webp'],
+  ['Owner-Operators', 'Dedicated dispatch and support so you can stay loaded, maximize miles, and grow your income.', '/images/originals/original-3.webp'],
+  ['Small Fleets', 'Scalable support for growing fleets and multiple trucks, with consistent communication and coordination.', '/images/originals/original-2-1.webp'],
+  ['New Carriers', 'Guidance and support to help new carriers get started with confidence.', '/images/originals/original-2-2.webp'],
   ['Cross-Border Carriers', 'Specialized support for U.S.–Canada operations, with bilingual English/French communication available for carriers and drivers.', '/images/cross-border-flags.webp']
 ];
 
@@ -54,7 +54,7 @@ export default function HomePage() {
     </section>
 
     <section className="home-partner">
-      <div className="home-partner-photo"><Image src="/images/partner-road.webp" alt="Carrier beside a truck overlooking a mountain road at sunset" fill sizes="(max-width: 700px) 100vw, 52vw"/></div>
+      <div className="home-partner-photo"><Image src="/images/originals/original-7.webp" alt="Dispatch coordination and carrier support at a laptop" fill sizes="(max-width: 700px) 100vw, 52vw"/></div>
       <div className="home-partner-copy"><span className="home-small-heading">ABOUT SIRANAY</span><h2>A Partner on the Road.<br/><em>Not Just a Dispatcher.</em></h2><p><strong>Siranay Freight Management</strong> was built to support the hardworking owner-operators and small fleets who keep North America moving. We provide reliable dispatch support, clear communication, and personalized service — with bilingual English/French support for U.S.–Canada operations.</p><Link href="/about" className="home-gold-button">LEARN MORE ABOUT SIRANAY →</Link></div>
     </section>
 
